@@ -1,10 +1,12 @@
 # KeyboardListener Widget Presentation
 
 ## Summary
-This project is an interactive Flutter demo called **Corner Collector**. In this app, you control a character inside a square arena using keyboard inputs:
+This is a simple game project that I decided to use as an example to show how KeyboardListener widget works. It's an interactive Flutter app where you control a character inside a square arena using keyboard inputs:
 * **Move:** Use the **Arrow Keys** or **WASD** to navigate around the board.
-* **Collect:** Move close to any of the four corner gems and press the **Spacebar** to collect it.
-* **Restart:** After collecting all four gems, press the **R** key to reset the board and play again.
+* **Collect:** Move player close to any of the four corner gems and press the **Spacebar** to collect it.
+* **Restart:** After collecting all four gems, press the **R** key to reset or use button in the bottam of the app to reset.
+
+  ## Demo screenshots: https://drive.google.com/drive/folders/1OAsXjHuUaGC72gpu4ls9ItuLL50CdrGO?usp=sharing
 
 The app provides a practical, visual example of how to capture and respond to real-time physical keystrokes in Flutter using the `KeyboardListener` widget.
 
@@ -42,8 +44,8 @@ Make sure you have [Flutter](https://flutter.dev) installed on your system.
 In this project, `KeyboardListener` uses three essential attributes to handle keyboard input accurately:
 
 ### 1. `focusNode` (`FocusNode`, Required)
-* **What it does:** It controls and tracks the keyboard focus state of the widget in Flutter's focus tree.
-* **Why it matters:** Flutter only sends hardware keyboard events to widgets that are currently focused. Without an active `FocusNode`, the system cannot determine where to deliver key presses.
+* **What it does:** This is the main attribute in this project or in KeyboardListener widget because It controls and tracks the keyboard focus state of the widget in Flutter's focus tree.
+* **Why it matters:** Flutter only sends hardware keyboard events to widgets that are currently focused. Without an active `FocusNode`, the system cannot determine where to deliver key presses. without this, we would have gotten literal letters like 'W' or empty space when we click spacebar. but with help of this, we take phyisical signe before being translated.
 * **Best practice:** Always create the `FocusNode` in `initState()` (or in a stateful class) and dispose of it in `dispose()` to avoid memory leaks.
 
 ### 2. `autofocus` (`bool`, Default: `false`)
