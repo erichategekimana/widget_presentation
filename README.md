@@ -1,5 +1,15 @@
 # KeyboardListener Widget Presentation
 
+## Summary
+This project is an interactive Flutter demo called **Corner Collector**. In this app, you control a character inside a square arena using keyboard inputs:
+* **Move:** Use the **Arrow Keys** or **WASD** to navigate around the board.
+* **Collect:** Move close to any of the four corner gems and press the **Spacebar** to collect it.
+* **Restart:** After collecting all four gems, press the **R** key to reset the board and play again.
+
+The app provides a practical, visual example of how to capture and respond to real-time physical keystrokes in Flutter using the `KeyboardListener` widget.
+
+---
+
 ## Widget Description
 `KeyboardListener` is a Flutter widget that listens for hardware keyboard events (like pressing, holding, or releasing a key) whenever it has keyboard focus.
 
@@ -46,11 +56,3 @@ In this project, `KeyboardListener` uses three essential attributes to handle ke
   * **Event type:** Checks whether the key was pressed (`KeyDownEvent`), held down (`KeyRepeatEvent`), or released (`KeyUpEvent`).
   * **Key identity:** Uses `event.logicalKey` (e.g., `LogicalKeyboardKey.arrowUp` or `LogicalKeyboardKey.space`) to identify keys regardless of keyboard layout, or `event.physicalKey` for the hardware position.
 * **Note:** `onKeyEvent` is the modern Flutter standard, replacing the older and deprecated `onKey` (`RawKeyEvent`).
-
----
-
-## About the Presentation Demo (Corner Collector Game)
-In this demo project, `KeyboardListener` powers an interactive mini-game:
-* **WASD / Arrow Keys**: Move the player character across the screen.
-* **Spacebar**: Collect gems at each corner.
-* **R Key**: Reset and restart the game.
